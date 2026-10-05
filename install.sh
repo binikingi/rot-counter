@@ -9,5 +9,6 @@ ditto -x -k "$TMP/RotCounter.zip" "$TMP"
 pkill -x RotCounter || true
 rm -rf /Applications/RotCounter.app
 mv "$TMP/RotCounter.app" /Applications/
+pkill -f RotWidget.appex || true  # stale widget process from the old version; macOS relaunches it on demand
 open /Applications/RotCounter.app
 echo "Installed. Add apps from the hourglass in your menu bar, then add the widget (right-click desktop → Edit Widgets)."
