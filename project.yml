@@ -1,0 +1,48 @@
+name: RotCounter
+options:
+  bundleIdPrefix: io.github.binikingi
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    DEVELOPMENT_TEAM: AU3TN2W7M5
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_HARDENED_RUNTIME: YES
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+    SWIFT_VERSION: 6.0
+targets:
+  RotCounter:
+    type: application
+    platform: macOS
+    sources: [App, Shared]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Rot Counter
+        LSUIElement: true
+        AppGroupID: $(TeamIdentifierPrefix)rotcounter
+    entitlements:
+      path: App/RotCounter.entitlements
+      properties:
+        com.apple.security.application-groups: [$(TeamIdentifierPrefix)rotcounter]
+    dependencies:
+      - target: RotWidget
+  RotWidget:
+    type: app-extension
+    platform: macOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: io.github.binikingi.RotCounter.Widget
+    sources: [Widget, Shared]
+    info:
+      path: Widget/Info.plist
+      properties:
+        CFBundleDisplayName: Rot Counter
+        AppGroupID: $(TeamIdentifierPrefix)rotcounter
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: Widget/RotWidget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.application-groups: [$(TeamIdentifierPrefix)rotcounter]
