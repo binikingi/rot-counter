@@ -43,6 +43,8 @@ struct MenuContent: View {
 
             Divider()
             Button("Add App…") { tracker.pick() }
+            Button("Export Image…") { exportBragCard(tracker.apps) }
+                .disabled(tracker.apps.isEmpty)
             Toggle("Launch at Login", isOn: $launchAtLogin)
                 .onChange(of: launchAtLogin) { _, on in
                     if on { try? SMAppService.mainApp.register() } else { try? SMAppService.mainApp.unregister() }

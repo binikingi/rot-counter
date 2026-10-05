@@ -26,6 +26,8 @@ final class Tracker {
                 Store.save(self.apps)
             }
         }
+        let brand = NSWorkspace.shared.icon(forFile: Bundle.main.bundlePath)
+        try? bitmap(brand, size: 128).representation(using: .png, properties: [:])?.write(to: Store.brandIconURL)
         reconcile()
 
         // A tracker that isn't running can't track: enable launch-at-login on first run.

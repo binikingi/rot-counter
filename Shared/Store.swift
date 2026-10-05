@@ -29,4 +29,5 @@ enum Store {
     }
 
     static func iconURL(_ bundleID: String) -> URL { dir.appending(path: "\(bundleID).png") }
+    static let brandIconURL = dir.appending(path: "RotCounter.png")  // our own icon; the widget can't read the app bundle
 }

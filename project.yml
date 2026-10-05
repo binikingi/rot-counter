@@ -16,10 +16,14 @@ targets:
     type: application
     platform: macOS
     sources: [App, Shared]
+    settings:
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
       path: App/Info.plist
       properties:
         CFBundleDisplayName: Rot Counter
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSUIElement: true
         AppGroupID: $(TeamIdentifierPrefix)rotcounter
     entitlements:
@@ -38,6 +42,8 @@ targets:
       path: Widget/Info.plist
       properties:
         CFBundleDisplayName: Rot Counter
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         AppGroupID: $(TeamIdentifierPrefix)rotcounter
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
