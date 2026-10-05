@@ -4,7 +4,7 @@ A macOS widget that counts the days, hours, minutes and seconds since you last o
 VS Code, DataGrip, Postman, DBeaver: watch them rot.
 
 <p align="center">
-  <img src="docs/desktop.jpg" width="49%" alt="Rot Counter widget: Slack 24 days, VS Code 0 days">
+  <img src="docs/widget.jpg" width="49%" alt="Rot Counter widget: Slack 24 days, VS Code 0 days">
   <img src="docs/export.png" width="49%" alt="Rot Counter export: Slack 24 days, VS Code 0 days">
 </p>
 
