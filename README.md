@@ -3,6 +3,8 @@
 A macOS widget that counts the days, hours, minutes and seconds since you last opened the apps AI replaced.
 VS Code, DataGrip, Postman, DBeaver: watch them rot.
 
+<p align="center"><img src="docs/export.png" width="460" alt="Rot Counter export: Slack 24 days, VS Code 0 days"></p>
+
 ## Install
 
 ```sh
